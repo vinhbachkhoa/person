@@ -13,7 +13,7 @@ const router: Routes = [
         component: PersonComponent
     },
     {
-        path: 'detail',
+        path: 'detail/:id',
         component: DetailPersonComponent
     }
 ]

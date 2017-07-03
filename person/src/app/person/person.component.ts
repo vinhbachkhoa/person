@@ -12,13 +12,28 @@ export class PersonComponent implements OnInit {
   private personed: any;
   ngOnInit() {
     this.personed = {};
+    this.loadall();
   }
 
+  loadall() {
+    this.service.getlist().subscribe(respon => {
+      this.person = respon;
+    })
+  }
   submit() {
     this.service.add(this.personed).subscribe(respon => {
       if (respon) {
         alert("them thanh cong");
         this.personed = {};
+      }
+    })
+  }
+
+  xoa(id: number) {
+    this.service.delete(id).subscribe(respon => {
+      if (respon) {
+        alert("Xoa thanh cong");
+        this.loadall();
       }
     })
   }
