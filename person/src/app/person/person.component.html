@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <form (ngSubmit)="submit()" #re="ngForm">
+        <!--First row-->
+        <div class="row">
+          <!--First column-->
+          <div class="col-md-6">
+            <div class="md-form">
+              <i class="fa fa-envelope prefix"></i>
+              <p>Name:<input type="text" name="name" required class="form-control validate" [(ngModel)]="personed.name"></p>
+              <p>Mssv:<input type="number" name="mssv" required class="form-control validate" [(ngModel)]="personed.mssv"></p>
+              <p>Dia Chi:<input type="text" name="diachi" required class="form-control validate" [(ngModel)]="personed.diachi"></p>
+              <p>Overview<input type="text" name="overview" required class="form-control validate" [(ngModel)]="personed.overview"></p>
+              <p>Project<input type="text" name="name" required class="form-control validate" [(ngModel)]="personed.about"></p>
+              <button type="submit">Save</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <button (click)="cancle()">cancle</button>
+    </div>
+
+    <!--<div class="col-lg-6">
+      <div>
+        <ul>
+          <li *ngFor="let one of person">
+            <div class="row">
+              <div class="col-lg-6">
+                <a>{{one.name}}</a>
+              </div>
+              <div class="col-lg-6">
+                <button type="" [routerLink]="['/detail',one.id]">Xem</button>
+                <button type="" [routerLink]="['/detail',one.id]">Sua</button>
+                <button type="" (click)="xoa(one.id)">Xoa</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <ul class="pagination">
+        <li *ngFor="let page of page"> <a [routerLink]="['/person']" [queryParams]="{param:page}">{{page}}</a>
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
